@@ -1,21 +1,53 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
+const Container = styled.header`
+  width: 100%;
+  height: 50px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo {
+    margin-left: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  nav {
+    margin-right: 10px;
+  }
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  li {
+    padding: 5px;
+  }
+`;
+
+const StyledLink = styled(Link)`
+  font-size: 1rem;
+`;
 function Header() {
   return (
-    <header>
-      <b>HIDDENC</b>
+    <Container>
+      <div className="logo">HIDDENC</div>
       <nav>
         <ul>
           <li>
-            <NavLink to="/">Home</NavLink>
+            <StyledLink to="/">Home</StyledLink>
           </li>
           <li>
-            <NavLink to="/mypage">My Page</NavLink>
+            <Link to="/mypage">My Page</Link>
           </li>
         </ul>
       </nav>
-    </header>
+    </Container>
   );
 }
 export default Header;
