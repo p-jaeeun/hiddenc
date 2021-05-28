@@ -4,7 +4,7 @@ import AuthForm from '../components/AuthForm';
 const Login = () => {
   return (
     <React.Fragment>
-      <AuthForm />
+      <AuthForm authType="로그인" />
     </React.Fragment>
   );
 };
